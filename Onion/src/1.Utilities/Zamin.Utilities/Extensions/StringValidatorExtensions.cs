@@ -110,6 +110,35 @@ public static class StringValidatorExtensions
         }
     }
 
+    /// <summary>
+    /// صحت سنجی شماره دانشجویی
+    /// </summary>
+    /// <param name="input">شماره دانشجویی</param>
+    /// <returns>درست یا غلط</returns>
+    public static bool IsStudentNumber(this string studentNumber)
+    {
+        if (string.IsNullOrWhiteSpace(studentNumber) || studentNumber.Length != 9)
+            return false;
+
+
+        if (!studentNumber.IsNumeric())
+            return false;
+
+        if (!IsFormat1Validate(studentNumber))
+            return false;
+
+        return true;
+
+        static bool IsFormat1Validate(string studentNumber)
+        {
+            var allDigitEqual = new[] { "000000000", "111111111", "222222222", "333333333", "444444444", "555555555", "666666666", "777777777", "888888888", "999999999" };
+            if (!allDigitEqual.Contains(studentNumber))
+                return true;
+            return false;
+        }
+
+    }
+
     public static bool IsNumeric(this string nationalCode)
     {
         var regex = new Regex(@"\d+");

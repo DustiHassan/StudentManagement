@@ -1,4 +1,4 @@
-namespace Zamin.Utilities.Guards.GuardClauses;
+﻿namespace Zamin.Utilities.Guards.GuardClauses;
 
 public static class GreaterThanOrEqualGuardClause
 {

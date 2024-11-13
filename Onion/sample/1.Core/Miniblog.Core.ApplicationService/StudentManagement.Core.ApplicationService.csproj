@@ -1,0 +1,16 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\src\2.Core\Zamin.Core.ApplicationServices\Zamin.Core.ApplicationServices.csproj" />
+    <ProjectReference Include="..\..\..\src\2.Core\Zamin.Core.Domain.Toolkits\Zamin.Core.Domain.Toolkits.csproj" />
+    <ProjectReference Include="..\StudentManagement.Core.Contracts\StudentManagement.Core.Contracts.csproj" />
+    <ProjectReference Include="..\StudentManagement.Core.Domain\StudentManagement.Core.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
