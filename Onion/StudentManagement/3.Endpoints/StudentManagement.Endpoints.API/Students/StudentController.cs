@@ -4,6 +4,7 @@ using StudentManagement.Core.RequestResponse.Students.Commands.Create;
 using StudentManagement.Core.RequestResponse.Students.Commands.Delete;
 using StudentManagement.Core.RequestResponse.Students.Commands.DeleteGraph;
 using StudentManagement.Core.RequestResponse.Students.Commands.Update;
+using StudentManagement.Core.RequestResponse.Students.Queries.GetAll;
 using StudentManagement.Core.RequestResponse.Students.Queries.GetById;
 using System.Net;
 using Zamin.EndPoints.Web.Controllers;
@@ -31,6 +32,8 @@ namespace StudentManagement.Endpoints.API.Students
         #region Queries
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(GetStudentByIdQuery query) => await Query<GetStudentByIdQuery, StudentQr?>(query);
+        [HttpGet("GetAll")]
+        public async Task<IActionResult> GetAll(GetAllStudentQuery query) => await Query<GetAllStudentQuery, IEnumerable<StudentQr?>>(query);
         #endregion
 
         #region Methods
