@@ -104,7 +104,7 @@ public static class HostingExtensions
 
         app.UseHttpsRedirection();
 
-        //app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("StudentManagement", "BlogCreated"));
+        //app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("StudentManagement", "StudentCreated"));
 
         //var useIdentityServer = app.UseIdentityServer("OAuth");
 

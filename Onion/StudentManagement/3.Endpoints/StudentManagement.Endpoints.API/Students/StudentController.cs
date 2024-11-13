@@ -29,7 +29,6 @@ namespace StudentManagement.Endpoints.API.Students
         #endregion
 
         #region Queries
-        [Authorize]
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(GetStudentByIdQuery query) => await Query<GetStudentByIdQuery, StudentQr?>(query);
         #endregion

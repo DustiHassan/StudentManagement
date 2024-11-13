@@ -41,7 +41,7 @@ public static class SwaggerExtentions
                                 Scopes = oAuthOption.Scopes
                             }
                         },
-                    }); ;
+                    });
 
                     o.OperationFilter<AddParamsToHeader>();
                 }

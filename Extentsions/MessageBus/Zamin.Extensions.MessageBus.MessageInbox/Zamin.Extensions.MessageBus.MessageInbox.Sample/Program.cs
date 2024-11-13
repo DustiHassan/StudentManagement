@@ -12,7 +12,7 @@ builder.Services.AddZaminNewtonSoftSerializer();
 builder.Services.AddZaminRabbitMqMessageBus(c =>
 {
     c.PerssistMessage = true;
-    c.ExchangeName = "MiniBlogExchange";
+    c.ExchangeName = "StudentManagementExchange";
     c.ServiceName = "SampleApplciatoinReceiver";
     c.Url = @"amqp://guest:guest@localhost:5672/";
 });
@@ -39,7 +39,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 //app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("SampleApplciatoin", "PersonEvent"));
 //app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("SampleApplciatoin", "PersonEvent"));
-app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("MiniBlog", "BlogCreated"));
+app.Services.ReceiveEventFromRabbitMqMessageBus(new KeyValuePair<string, string>("StudentManagement", "BlogCreated"));
 
 app.UseAuthorization();
 

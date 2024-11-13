@@ -15,7 +15,7 @@ builder.Services.AddSwaggerGen();
 /// </summary>
 builder.Services.AddZaminParrotTranslator(c =>
 {
-    c.ConnectionString = "Server=.; Initial Catalog=MiniBlogDb; User Id=sa; Password=1qaz!QAZ";
+    c.ConnectionString = "Server=.; Initial Catalog=StudentManagementDb; User Id=sa; Password=1qaz!QAZ";
     c.AutoCreateSqlTable = true;
     c.SchemaName = "dbo";
     c.TableName = "ParrotTranslations";

@@ -15,6 +15,5 @@ SerilogExtensions.RunWithSerilogExceptionHandling(() =>
         o.ServiceVersion = builder.Configuration.GetValue<string>("ServiceVersion");
     })
     .ConfigureServices().ConfigurePipeline();
-    app.UseIdentityServer("OAuth");
     app.Run();
 });
