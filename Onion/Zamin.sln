@@ -33,7 +33,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Core", "1.Core", "{798492
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagement.Core.Contracts", "sample\1.Core\StudentManagement.Core.Contracts\StudentManagement.Core.Contracts.csproj", "{44141439-2371-4398-8EEF-B8D2729B7279}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagement.Core.ApplicationService", "sample\1.Core\Miniblog.Core.ApplicationService\StudentManagement.Core.ApplicationService.csproj", "{CC738573-5F5A-4CC5-99E5-44D0DFD13D5C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StudentManagement.Core.ApplicationService", "sample\1.Core\StudentManagement.Core.ApplicationService\StudentManagement.Core.ApplicationService.csproj", "{CC738573-5F5A-4CC5-99E5-44D0DFD13D5C}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zamin.EndPoints.Web", "src\4.EndPoints\Zamin.EndPoints.Web\Zamin.EndPoints.Web.csproj", "{A49FCF35-DE32-40D4-BF33-5FD670766E6A}"
 EndProject

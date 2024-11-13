@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using StudentManagement.Core.Domain.People.Entities;
 using StudentManagement.Infra.Data.Sql.Queries.Students;
 using Zamin.Infra.Data.Sql.Queries;
 
@@ -27,9 +28,14 @@ namespace StudentManagement.Infra.Data.Sql.Queries.Common
         {
             modelBuilder.Entity<Student>(entity =>
             {
+                entity.HasKey(e => e.Id);
                 entity.Property(e => e.CreatedByUserId).HasMaxLength(50);
 
                 entity.Property(e => e.ModifiedByUserId).HasMaxLength(50);
+                entity.Property(e => e.StudentNumber).HasMaxLength(9);
+                entity.Property(e => e.NationalCode).HasMaxLength(10);
+                entity.Property(e => e.FirstName).HasMaxLength(100);
+                entity.Property(e => e.LastName).HasMaxLength(100);
             });
 
             modelBuilder.Entity<OutBoxEventItem>(entity =>

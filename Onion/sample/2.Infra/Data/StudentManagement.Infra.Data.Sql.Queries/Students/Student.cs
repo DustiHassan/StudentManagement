@@ -5,6 +5,8 @@
         public int Id { get; set; }
         public string FirstName { get; set; } = null!;
         public string LastName { get; set; } = null!;
+        public string StudentNumber { get; set; } = null!;
+        public string NationalCode { get; set; } = null!;
         public string? CreatedByUserId { get; set; }
         public DateTime? CreatedDateTime { get; set; }
         public string? ModifiedByUserId { get; set; }

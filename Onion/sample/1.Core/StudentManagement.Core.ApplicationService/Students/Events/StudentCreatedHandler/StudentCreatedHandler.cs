@@ -34,7 +34,7 @@ public class StudentCreatedHandler : IDomainEventHandler<StudentCreated>
         }
         catch (Exception ex)
         {
-
+            _logger.LogError(ex, "Error {Event} in StudentCreatedHandler", Event.GetType().Name);
             throw;
         }
 

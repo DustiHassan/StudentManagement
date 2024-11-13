@@ -69,6 +69,7 @@ public abstract class BaseCommandDbContext : DbContext
         configurationBuilder.Properties<BusinessId>().HaveConversion<BusinessIdConversion>();
         configurationBuilder.Properties<LegalNationalId>().HaveConversion<LegalNationalId>();
         configurationBuilder.Properties<NationalCode>().HaveConversion<NationalCodeConversion>();
+        configurationBuilder.Properties<StudentNumber>().HaveConversion<StudentNumberConversion>();
 
     }
 

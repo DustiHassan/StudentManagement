@@ -9,21 +9,21 @@ namespace StudentManagement.Core.ApplicationService.Students.Commands.Create;
 
 public class CreateStudentCommandHandler : CommandHandler<CreateStudentCommand, Guid>
 {
-    private readonly IStudentCommandRepository _StudentCommandRepository;
+    private readonly IStudentCommandRepository _studentCommandRepository;
 
     public CreateStudentCommandHandler(ZaminServices zaminServices,
                                     IStudentCommandRepository StudentCommandRepository) : base(zaminServices)
     {
-        _StudentCommandRepository = StudentCommandRepository;
+        _studentCommandRepository = StudentCommandRepository;
     }
 
     public override async Task<CommandResult<Guid>> Handle(CreateStudentCommand command)
     {
         Student student = Student.Create(command.FirstName, command.LastName, command.StudentNumber, command.NationalCode);
 
-        await _StudentCommandRepository.InsertAsync(student);
+        await _studentCommandRepository.InsertAsync(student);
 
-        await _StudentCommandRepository.CommitAsync();
+        await _studentCommandRepository.CommitAsync();
 
         return Ok(student.BusinessId.Value);
     }

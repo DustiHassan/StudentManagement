@@ -39,7 +39,7 @@
 
 		<ItemGroup>
 				<ProjectReference Include="..\..\..\src\4.EndPoints\Zamin.EndPoints.Web\Zamin.EndPoints.Web.csproj" />
-				<ProjectReference Include="..\..\1.Core\Miniblog.Core.ApplicationService\StudentManagement.Core.ApplicationService.csproj" />
+				<ProjectReference Include="..\..\1.Core\StudentManagement.Core.ApplicationService\StudentManagement.Core.ApplicationService.csproj" />
 				<ProjectReference Include="..\..\1.Core\StudentManagement.Core.Contracts\StudentManagement.Core.Contracts.csproj" />
 				<ProjectReference Include="..\..\1.Core\StudentManagement.Core.Domain\StudentManagement.Core.Domain.csproj" />
 				<ProjectReference Include="..\..\2.Infra\Data\StudentManagement.Infra.Data.Sql.Commands\StudentManagement.Infra.Data.Sql.Commands.csproj" />

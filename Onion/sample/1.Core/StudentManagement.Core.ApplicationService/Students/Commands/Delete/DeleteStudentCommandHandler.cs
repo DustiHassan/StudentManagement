@@ -5,21 +5,19 @@ using Zamin.Core.ApplicationServices.Commands;
 using Zamin.Core.Contracts.Data.Commands;
 using Zamin.Core.Domain.Exceptions;
 using Zamin.Core.RequestResponse.Commands;
+using Zamin.Core.RequestResponse.Common;
 using Zamin.Utilities;
 
 namespace StudentManagement.Core.ApplicationService.Students.Commands.Delete;
 
 public sealed class DeleteStudentCommandHandler : CommandHandler<DeleteStudentCommand>
 {
-    private readonly IUnitOfWork _unitOfWork;
     private readonly IStudentCommandRepository _studentCommandRepository;
 
 
     public DeleteStudentCommandHandler(ZaminServices zaminServices,
-                                    IUnitOfWork unitOfWork,
                                     IStudentCommandRepository studentCommandRepository) : base(zaminServices)
     {
-        _unitOfWork = unitOfWork;
         _studentCommandRepository = studentCommandRepository;
     }
 
@@ -28,7 +26,10 @@ public sealed class DeleteStudentCommandHandler : CommandHandler<DeleteStudentCo
         Student? student = await _studentCommandRepository.GetGraphAsync(command.Id);
 
         if (student is null)
-            throw new InvalidEntityStateException("دانشجو یافت نشد");
+        {
+            result.AddMessage("StudentNotFound");
+            return Result(ApplicationServiceStatus.NotFound);
+        }
 
         student.Delete();
 

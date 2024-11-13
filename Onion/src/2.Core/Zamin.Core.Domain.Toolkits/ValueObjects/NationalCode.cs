@@ -36,7 +36,7 @@ public class NationalCode : BaseValueObject<NationalCode>
 
     #region Operator Overloading
 
-    public static explicit operator string(NationalCode title) => title.Value;
+    public static explicit operator string(NationalCode nationalCode) => nationalCode.Value;
     public static implicit operator NationalCode(string value) => new(value);
     #endregion
 

@@ -2,6 +2,9 @@
 using StudentManagement.Core.Domain.Students.Entities;
 using StudentManagement.Core.Domain.People.Entities;
 using Zamin.Extensions.Events.Outbox.Dal.EF;
+using Zamin.Extensions.Events.Outbox.Dal.EF.Configs;
+using Zamin.Infra.Data.Sql.Commands;
+using StudentManagement.Infra.Data.Sql.Commands.Students.Configs;
 
 namespace StudentManagement.Infra.Data.Sql.Commands.Common
 {
@@ -15,6 +18,14 @@ namespace StudentManagement.Infra.Data.Sql.Commands.Common
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.ApplyConfiguration(new StudentConfig());
+            builder.ApplyConfiguration(new PeopleConfig());
         }
 
     }

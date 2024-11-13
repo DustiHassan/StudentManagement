@@ -9,7 +9,7 @@ namespace StudentManagement.Core.Domain.Students.Entities;
 public class Student : AggregateRoot<int>
 {
     #region Properties
-    public string FirsName { get; private set; }
+    public string FirstName { get; private set; }
     public string LastName { get; private set; }
     public NationalCode NationalCode { get; private set; }
     public StudentNumber StudentNumber { get; private set; }
@@ -22,12 +22,11 @@ public class Student : AggregateRoot<int>
     }
     public Student(string firstName, string lastName, StudentNumber studentNumber, NationalCode nationalCode)
     {
-        FirsName = firstName;
+        FirstName = firstName;
         LastName = lastName;
-
-        AddEvent(new StudentCreated(BusinessId.Value, FirsName, LastName, StudentNumber.Value, NationalCode.Value));
         StudentNumber = studentNumber;
         NationalCode = nationalCode;
+        AddEvent(new StudentCreated(BusinessId.Value, FirstName, LastName, StudentNumber.Value, NationalCode.Value));
     }
     #endregion
 
@@ -36,16 +35,15 @@ public class Student : AggregateRoot<int>
 
     public void Update(string firstName, string lastName, StudentNumber studentNumber, NationalCode nationalCode)
     {
-        FirsName = firstName;
+        FirstName = firstName;
         LastName = lastName;
         StudentNumber = studentNumber;
         NationalCode = nationalCode;
 
-        AddEvent(new StudentUpdated(BusinessId.Value, FirsName, LastName, StudentNumber.Value, NationalCode.Value));
+        AddEvent(new StudentUpdated(BusinessId.Value, FirstName, LastName, StudentNumber.Value, NationalCode.Value));
     }
     public void Delete()
     {
-
         AddEvent(new StudentDeleted(BusinessId.Value));
     }
 

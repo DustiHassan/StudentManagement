@@ -36,7 +36,7 @@ public class StudentNumber : BaseValueObject<StudentNumber>
 
     #region Operator Overloading
 
-    public static explicit operator string(StudentNumber title) => title.Value;
+    public static explicit operator string(StudentNumber studentNumber) => studentNumber.Value;
     public static implicit operator StudentNumber(string value) => new(value);
     #endregion
 

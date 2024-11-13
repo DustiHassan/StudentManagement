@@ -16,7 +16,9 @@ public class StudentQueryRepository : BaseQueryRepository<StudentManagementQuery
         => await _dbContext.Students.Select(c => new StudentQr()
         {
             Id = c.Id,
-            Title = c.FirstName,
-            Description = c.LastName
+            FirstName = c.FirstName,
+            LastName = c.LastName,
+            StudentNumber = c.StudentNumber,
+            NationalCode = c.NationalCode,
         }).FirstOrDefaultAsync(c => c.Id.Equals(query.StudentId));
 }

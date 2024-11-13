@@ -12,6 +12,7 @@ using Zamin.EndPoints.Web.Extensions.ModelBinding;
 using Zamin.Extensions.DependencyInjection;
 using Zamin.Extensions.Events.Outbox.Dal.EF.Interceptors;
 using Zamin.Infra.Data.Sql.Commands.Interceptors;
+using StudentManagement.Endpoints.API.Extentions.DependencyInjection.IdentityServer.Extentions;
 
 namespace StudentManagement.Endpoints.API.Extentions;
 
@@ -75,7 +76,7 @@ public static class HostingExtensions
 
         //builder.Services.AddZaminTraceJeager(configuration, "OpenTeletmetry");
 
-        //builder.Services.AddIdentityServer(configuration, "OAuth");
+        builder.Services.AddIdentityServer(configuration, "OAuth");
 
         builder.Services.AddSwagger(configuration, "Swagger");
 

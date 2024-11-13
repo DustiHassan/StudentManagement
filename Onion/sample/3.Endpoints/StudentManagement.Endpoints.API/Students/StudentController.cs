@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StudentManagement.Core.RequestResponse.Students.Commands.Create;
 using StudentManagement.Core.RequestResponse.Students.Commands.Delete;
 using StudentManagement.Core.RequestResponse.Students.Commands.DeleteGraph;
 using StudentManagement.Core.RequestResponse.Students.Commands.Update;
 using StudentManagement.Core.RequestResponse.Students.Queries.GetById;
+using System.Net;
 using Zamin.EndPoints.Web.Controllers;
 
 namespace StudentManagement.Endpoints.API.Students
@@ -27,6 +29,7 @@ namespace StudentManagement.Endpoints.API.Students
         #endregion
 
         #region Queries
+        [Authorize]
         [HttpGet("GetById")]
         public async Task<IActionResult> GetById(GetStudentByIdQuery query) => await Query<GetStudentByIdQuery, StudentQr?>(query);
         #endregion
